@@ -1,33 +1,26 @@
-/*
- * File: 2-print_dog.c
- * Auth: Gedeon Obae Gekonge
- */
-
 #include "dog.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * print_dog - Prints a struct dog.
- * @d: The struct dog to be printed.
- */
+ * print_dog - Print the elements of variable of type struct dog.
+ * @d: Variable to print it's elements.
+ **/
+
 void print_dog(struct dog *d)
 {
-	if (d == NULL)
-		return;
-
-	if (d->name == NULL)
-		printf("Name: (nil)\n");
-	else
-		printf("Name: %s\n", d->name);
-
-	if (d->age < 0)
-		printf("Age: (nil)\n");
-	else
+	if (d)
+	{
+		if (d->name)
+			printf("Name: %s\n", d->name);
+		else
+			printf("Name: (nil)\n");
 		printf("Age: %f\n", d->age);
-
-	if (d->owner == NULL)
-		printf("Owner: (nil)\n");
-	else
-		printf("Owner: %s\n", d->owner);
+		
+		if (d->owner != NULL)
+			printf("Owner: %s", d->owner);
+		else
+			printf("Owner: (nil)\n");
+		printf("\n");
+	}
 }

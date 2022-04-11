@@ -1,20 +1,25 @@
-/*
- * File: 1-args.c
- * Auth: Gedeon Obae Gekonge
- */
-
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - Prints the number of arguments passed to it.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - prints number of arguments
+ * @argc: first parameter
+ * @argv: second parameter
  *
- * Return: Always 0.
+ * Description: prints number of arguments
+ * Return: 0 for code success
  */
-int main(int argc, char __attribute__((__unused__)) *argv[])
+
+
+int main(int argc, char *argv[])
 {
-	printf("%d\n", argc - 1);
+	/* code */
+	int i;
+
+	for (i = 0; i < argc; i++)
+		*argv[i] = *argv[i];
+
+	printf("%d\n", (i - 1));
 
 	return (0);
 }

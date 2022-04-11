@@ -1,23 +1,24 @@
-/*
- * File: 2-args.c
- * Auth: Gedeon Obae Gekonge
- */
-
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - Prints all arguments it receives.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - prints all arguments
+ * @argc: first parameter
+ * @argv: second parameter
  *
- * Return: Always 0.
+ * Description: prints all arguments it receives
+ * Return: Always(0) Success
  */
+
 int main(int argc, char *argv[])
 {
-	int arg;
-
-	for (arg = 0; arg < argc; arg++)
-		printf("%s\n", argv[arg]);
+	int i = 0;
+	/* code */
+	for (; i < argc; i++)
+	{
+		/* code */
+		printf("%s\n", argv[i]);
+	}
 
 	return (0);
 }

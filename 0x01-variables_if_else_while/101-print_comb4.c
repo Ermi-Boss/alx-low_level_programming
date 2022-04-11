@@ -1,36 +1,38 @@
-
 #include <stdio.h>
+
 /**
- * main - program that prints all possible different combinations of 3 digits.
- * Return: 0
- */
+ * main - prints a list of double didgits
+ *
+ * Description: digits should not be repeated twice
+ * Return: Always(0) Success
+*/
+
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int m_d;
-	int l_d;
+	int i, j;
 
-	while (c <= 999)
+	for (i = 48; i < 58; i++)
 	{
-		f_d = (c / 100 + '0');
-		m_d = (c / 10 % 10 + '0');
-		l_d = (c % 10 + '0');
-
-		if ((f_d < m_d) && (m_d < l_d))
+		for (j = 48; j < 58; j++)
 		{
-			putchar(f_d);
-			putchar(m_d);
-			putchar(l_d);
-
-			if (c != 789)
+			if (i == j)
+			{
+				continue;
+			}
+			putchar(i);
+			putchar(j);
+			if (i == 56 && j == 57)
+			{
+				break;
+			}
+			else
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		c++;
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+
+	return (0);
 }

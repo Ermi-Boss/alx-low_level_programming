@@ -1,13 +1,19 @@
 #include "main.h"
+#include <ctype.h>
+
 /**
-*_isalpha - controls if a character is alphabetical
-*@c: character to be verified
-*Return: return 0 or 1
-*/
+ * _isalpha - prints 1 or 0 depending on input
+ * @c: collects a char type
+ *
+ * Description: Checks for alphabets lower and uppercase
+ * Return: Always(0).
+ */
+
 int _isalpha(int c)
 {
-if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-return (1);
-
-return (0);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	{
+		return (1);
+	}
+	return (0);
 }

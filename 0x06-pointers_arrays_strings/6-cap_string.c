@@ -1,43 +1,35 @@
-/*
- * File: 6-cap_string.c
- * Auth: Gedeon Obae Gekonge
- */
-
 #include "main.h"
 
 /**
- * cap_string - Capitalizes all words of a string.
- * @str: The string to be capitalized.
+ *cap_string - capitalizes all words of a string.
+ *@s: string to use.
  *
- * Return: A pointer to the changed string.
+ *Return: string.
  */
-char *cap_string(char *str)
+
+char *cap_string(char *s)
 {
-	int index = 0;
+	int i = 0;
 
-	while (str[index])
+	while (/* condition */s[i] != '\0')
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
+		/* code */
+		if (/* condition */s[i] == ',' || s[i] == ';' || s[i] == '.'
+						|| s[i] == '!' || s[i] == '?' || s[i] == '"'
+						|| s[i] == '(' || s[i] == ')' || s[i] == '{'
+						|| s[i] == '}' || s[i] == ' ' || s[i] == '\t'
+						|| s[i] == '\n')
+		{
+			/* code */
+			if (/* condition */s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			{
+			/* code */
+			s[i + 1] -= 32;
+			}
+		}
+	i++;
 
-		if (str[index - 1] == ' ' ||
-		    str[index - 1] == '\t' ||
-		    str[index - 1] == '\n' ||
-		    str[index - 1] == ',' ||
-		    str[index - 1] == ';' ||
-		    str[index - 1] == '.' ||
-		    str[index - 1] == '!' ||
-		    str[index - 1] == '?' ||
-		    str[index - 1] == '"' ||
-		    str[index - 1] == '(' ||
-		    str[index - 1] == ')' ||
-		    str[index - 1] == '{' ||
-		    str[index - 1] == '}' ||
-		    index == 0)
-			str[index] -= 32;
-
-		index++;
 	}
 
-	return (str);
+	return (s);
 }
